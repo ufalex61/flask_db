@@ -1,5 +1,9 @@
 from flask import Flask
+from actions.config import getDBConfig
 
+db_ini = "./static/SQLite.ini"
+dbpath = getDBConfig(db_ini)
+print("[APP]",dbpath)
 app = Flask(__name__,
             static_folder="static",
             template_folder="templates")
